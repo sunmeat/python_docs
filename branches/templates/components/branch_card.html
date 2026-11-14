@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="branch-card">
+    <div class="branch-image">
+        <img src="{% static branch.image_path %}"
+             alt="Філія у {{ branch.city }}"
+             class="branch-img"
+             loading="lazy">
+    </div><br />
+
+    <h2 class="branch-city">{{ branch.city }}</h2>
+    <p class="branch-role">{{ branch.role }}</p>
+
+    <ul>
+        {% for service in branch.services %}
+        <li>{{ service }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ branch.detail_url }}" class="btn btn-outline">
+        {{ branch.detail_text }}
+    </a>
+</div>

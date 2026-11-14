@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Філії Versailles Cortège{% endblock %}
+
+{% block content %}
+<main class="main-branches">
+    <section class="branches-hero">
+        <div class="container">
+            <h1 class="page-title">Наші філії</h1>
+            <p class="page-subtitle">Три ключові офіси для контролю вантажів на обох кінцях маршруту</p>
+        </div>
+    </section>
+
+    <section class="branches-list">
+        <div class="container">
+            <div class="branches-grid">
+                {% for branch in branches %}
+                {% include 'components/branch_card.html' with branch=branch %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
